@@ -1,0 +1,137 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: "fredoka", san-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #8f5171;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #a06586;
+}
+
+.gallery img {
+    width: 80%;
+    max-width: 500px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+/* White hearts animation */
+.timer::before, .timer::after {
+    content: "^ྀི❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎^ྀི";
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+    animation: float 3s infinite alternate;
+}
+
+#back-button {
+    position: fixed;  /* Makes it stay in place while scrolling */
+    top: 10px;        /* Distance from the top */
+    left: 10px;       /* Distance from the left */
+    padding: 5px 10px; /* Button size */
+    background-color: #8f5171; /* Button color */
+    color: white;     /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Adjust font size */
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* Remove any border */
+    cursor: pointer; /* Make it look clickable */
+    transition: 0.3s; /* Smooth hover effect */
+}
+
+#back-button:hover {
+    background-color: #733f5a; /* Darker shade when hovered */
+}
+
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(5px); }
+}
+
+/* Keyframes for Tilting Animation */
+@keyframes tiltAnimation {
+    0% { transform: rotate(-5deg); } 
+    50% { transform: rotate(5deg); } 
+    100% { transform: rotate(-5deg); }
+}
+
+/* Fix Character Image Placement */
+#character-left, #character-right {
+    position: relative; /* Stay in place */
+    z-index: 10; /* Make sure they are ABOVE the background */
+    pointer-events: none; /* Prevent blocking interactions */
+}
+
+/* Left Character */
+#character-left {
+    bottom: -170px;
+    left: 5px;
+    width: 170px;
+    animation: tiltAnimation 3s infinite ease-in-out;
+}
+
+/* Right Character */
+#character-right {
+    bottom: 10px;
+    right: 5px;
+    width: 170px;
+    animation: tiltAnimation 3s infinite ease-in-out;
+}
+
+/* Background & Timer */
+.time-container {
+    position: relative; /* Keep it in place */
+    text-align: center;
+    margin-top: 50px;
+}
+
+#time-page {
+    background-image: url('https://i.postimg.cc/gkngv17r/Untitled41-20250209014734.jpg'); /* Replace with actual background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1; /* Lower than characters so they appear above */
+height: 100vh; /* Makes it fill the whole screen */
+    width: 100vw;
+}
+
+/* Timer Styling */
+.timer {
+    font-family: "fredoka", san-serif;
+    font-size: 24px;
+    font-weight: bold;
+    background: none;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(255, 192, 203, 0.8); /* Pink glow */
+    position: relative;
+    z-index: 5; /* Higher than background */
+}
+
+}
